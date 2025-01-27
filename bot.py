@@ -8,9 +8,8 @@ import pytz
 import uuid
 import asyncio
 from datetime import date, timedelta
-import diec
 
-TOKEN = diec.decode()
+TOKEN = ""
 
 MAX_REQUESTS_PER_HOUR = 60
 
@@ -96,8 +95,8 @@ class Client(commands.Bot):
         super().__init__(command_prefix='.', intents=Intents().all())
         self.activity = discord.Activity(
             type=discord.ActivityType.watching,
-            name='D&I Projects',
-            details='v24.9.4',
+            name='VelisCore',
+            details='v25.1.27',
             state='Loading...',
             start=datetime.datetime.now()
         )
@@ -108,10 +107,10 @@ class Client(commands.Bot):
         print("Slash CMDs Synced " + str(len(synced)) + " Commands")
 
     async def on_member_join(self, member):
-        channel_id = 1230939254205448242
+        channel_id = 1333416134740807772
         channel = self.get_channel(channel_id)
         if channel:
-            await channel.send(f'**Welcome**, {member.mention}, to **D&I Projects**!')
+            await channel.send(f'**Welcome**, {member.mention}, to **Velis**!')
 
 client = Client()
 
@@ -276,30 +275,107 @@ class HelpView(View):
 class HelpSelect(Select):
     def __init__(self):
         options = [
+            discord.SelectOption(label="Eulionline", description="Pick this if you need help with Eulionline!"),
+            discord.SelectOption(label="Eulionline Android", description="Pick this if you need help with the Eulionline Android App!"),
+            discord.SelectOption(label="Eulionline iOS/iPadOS", description="Pick this if you need help with the Eulionline iOS/iPadOS App!"),
+            discord.SelectOption(label="Eulionline MacOS", description="Pick this if you need help with the Eulionline MacOS App!"),
+            discord.SelectOption(label="Eulionline Preview", description="Pick this if you need help with the Eulionline Preview Page!"),
+            discord.SelectOption(label="Eulionline Windows", description="Pick this if you need help with the Eulionline Windows App!"),
+            discord.SelectOption(label="Ideora", description="Pick this if you need help with Ideora!"),
+            discord.SelectOption(label="Ideora iOS/iPadOS", description="Pick this if you need help with the Ideora iOS/iPadOS App!"),
+            discord.SelectOption(label="Devco", description="Pick this if you need help with Devco!"),
+            discord.SelectOption(label="Devco API", description="Pick this if you need help with the Devco API!"),
+            discord.SelectOption(label="Devco Linux", description="Pick this if you need help with the Devco Linux App!"),
+            discord.SelectOption(label="Devco MacOS", description="Pick this if you need help with the Devco MacOS App!"),
+            discord.SelectOption(label="Devco Windows", description="Pick this if you need help with the Devco Windows App!"),
+            discord.SelectOption(label="Vocules", description="Pick this if you need help with Vocules!"),
+            discord.SelectOption(label="Keylogger", description="Pick this if you need help with our Keylogger!"),
+            discord.SelectOption(label="InsightLog", description="Pick this if you need help with InsightLog!"),
+            discord.SelectOption(label="ReturnTime", description="Pick this if you need help with ReturnTime!"),
+            discord.SelectOption(label="diec", description="Pick this if you need help with diec!"),
+            discord.SelectOption(label="BetterTkinter", description="Pick this if you need help with BetterTkinter!"),
+            discord.SelectOption(label="OpenAlways", description="Pick this if you need help with OpenAlways!"),
+            discord.SelectOption(label="githubinformation", description="Pick this if you need help with githubinformation!"),
+            discord.SelectOption(label="Connecto", description="Pick this if you need help with Connecto!"),
+            discord.SelectOption(label="devplaceo", description="Pick this if you need help with devplaceo!"),
             discord.SelectOption(label="D&I Bot", description="Pick this if you need help with our Discord Bot!"),
             discord.SelectOption(label="diec", description="Pick this if you need help with our PyPi Package *diec*!"),
             discord.SelectOption(label="Destor", description="Pick this if you need help with our Program Destor!"),
             discord.SelectOption(label="ChatBox", description="Pick this if you need help with our Program ChatBox!"),
-            discord.SelectOption(label="Minecraft Profiler", description="Pick this if you need help with our Program Minecraft Profiler!")
         ]
         super().__init__(placeholder="Choose your software!", min_values=1, max_values=1, options=options)
 
     async def callback(self, interaction: discord.Interaction):
         selected_help = self.values[0]
-        di_bot_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/Discord-Bot/wiki")
-        diec_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/diec")
-        destor_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/destor")
-        discordbotmanager_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/DiscordBotManager/wiki")
+        di_bot_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/wiki")
+        diec_button = link_button(text="Show 📩", link="https://github.com/VelisCore/diec")
+        destor_button = link_button(text="Show 📩", link="https://github.com/VelisCore/destor")
+        discordbotmanager_button = link_button(text="Show 📩", link="https://github.com/VelisCore/DiscordBotManager/wiki")
+        eulionline_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Eulionline")
+        ideora_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Ideora")
+        devco_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Devco")
+        vocules_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Vocules")
+        keylogger_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Keylogger")
+        insightlog_button = link_button(text="Show 📩", link="https://github.com/VelisCore/InsightLog")
+        returntime_button = link_button(text="Show 📩", link="https://github.com/VelisCore/ReturnTime")
+        bettertkinter_button = link_button(text="Show 📩", link="https://github.com/VelisCore/BetterTkinter")
+        openalways_button = link_button(text="Show 📩", link="https://github.com/VelisCore/OpenAlways")
+        githubinformation_button = link_button(text="Show 📩", link="https://github.com/VelisCore/githubinformation")
+        connecto_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Connecto")
+        devplaceo_button = link_button(text="Show 📩", link="https://github.com/VelisCore/devplaceo")
+
         if selected_help == "D&I Bot":
-            await interaction.response.send_message(f"Here you can read the Wiki of our [Discord Bot](https://github.com/D-I-Projects/Discord-Bot/wiki)!", view=di_bot_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our [Discord Bot](https://github.com/VelisCore/Velaris/wiki). If you have any more questions, run `/feedback`.", view=di_bot_button, ephemeral=True)
         elif selected_help == "diec":
-            await interaction.response.send_message(f"Here you can read about our PyPi Package [diec](https://github.com/D-I-Projects/diec)!",view=diec_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our PyPi Package [diec](https://github.com/VelisCore/diec). If you have any more questions, run `/feedback`.", view=diec_button, ephemeral=True)
         elif selected_help == "Destor":
-            await interaction.response.send_message(f"Here you can read the Wiki of our Program [Destor](https://github.com/D-I-Projects/destor)!",view=destor_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our Program [Destor](https://github.com/VelisCore/destor). If you have any more questions, run `/feedback`.", view=destor_button, ephemeral=True)
         elif selected_help == "ChatBox":
-            await interaction.response.send_message(f"Here you can read the Wiki of our Program [ChatBox](https://github.com/D-I-Projects/ChatBox/wiki)!",view=discordbotmanager_button, ephemeral=True)
-        elif selected_help == "Minecraft Profiler":
-            await interaction.response.send_message(f"Here you can read the Wiki of our Program [Minecraft Profiler](https://github.com/D-I-Projects/minecraft-profiler/wiki)!",view=discordbotmanager_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our Program [ChatBox](https://github.com/VelisCore/ChatBox/wiki). If you have any more questions, run `/feedback`.", view=discordbotmanager_button, ephemeral=True)
+        elif selected_help == "Eulionline":
+            await interaction.response.send_message(f"Here you can read more about [Eulionline](https://github.com/VelisCore/Eulionline). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Eulionline Android":
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Android App](https://github.com/VelisCore/Eulionline-Android). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Eulionline iOS/iPadOS":
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline iOS/iPadOS App](https://github.com/VelisCore/Eulionline-iOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Eulionline MacOS":
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline MacOS App](https://github.com/VelisCore/Eulionline-MacOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Eulionline Preview":
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Preview](https://github.com/VelisCore/Eulionline-Preview). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Eulionline Windows":
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Windows App](https://github.com/VelisCore/Eulionline-Windows). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+        elif selected_help == "Ideora":
+            await interaction.response.send_message(f"Here you can read more about [Ideora](https://github.com/VelisCore/Ideora). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
+        elif selected_help == "Ideora iOS/iPadOS":
+            await interaction.response.send_message(f"Here you can read more about the [Ideora iOS/iPadOS App](https://github.com/VelisCore/Ideora-iOS). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
+        elif selected_help == "Devco":
+            await interaction.response.send_message(f"Here you can read more about [Devco](https://github.com/VelisCore/Devco). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+        elif selected_help == "Devco API":
+            await interaction.response.send_message(f"Here you can read more about the [Devco API](https://github.com/VelisCore/Devco-API). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+        elif selected_help == "Devco Linux":
+            await interaction.response.send_message(f"Here you can read more about the [Devco Linux App](https://github.com/VelisCore/Devco-Linux). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+        elif selected_help == "Devco MacOS":
+            await interaction.response.send_message(f"Here you can read more about the [Devco MacOS App](https://github.com/VelisCore/Devco-MacOS). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+        elif selected_help == "Devco Windows":
+            await interaction.response.send_message(f"Here you can read more about the [Devco Windows App](https://github.com/VelisCore/Devco-Windows). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+        elif selected_help == "Vocules":
+            await interaction.response.send_message(f"Here you can read more about [Vocules](https://github.com/VelisCore/Vocules). If you have any more questions, run `/feedback`.", view=vocules_button, ephemeral=True)
+        elif selected_help == "Keylogger":
+            await interaction.response.send_message(f"Here you can read more about [Keylogger](https://github.com/VelisCore/Keylogger). If you have any more questions, run `/feedback`.", view=keylogger_button, ephemeral=True)
+        elif selected_help == "InsightLog":
+            await interaction.response.send_message(f"Here you can read more about [InsightLog](https://github.com/VelisCore/InsightLog). If you have any more questions, run `/feedback`.", view=insightlog_button, ephemeral=True)
+        elif selected_help == "ReturnTime":
+            await interaction.response.send_message(f"Here you can read more about [ReturnTime](https://github.com/VelisCore/ReturnTime). If you have any more questions, run `/feedback`.", view=returntime_button, ephemeral=True)
+        elif selected_help == "BetterTkinter":
+            await interaction.response.send_message(f"Here you can read more about [BetterTkinter](https://github.com/VelisCore/BetterTkinter). If you have any more questions, run `/feedback`.", view=bettertkinter_button, ephemeral=True)
+        elif selected_help == "OpenAlways":
+            await interaction.response.send_message(f"Here you can read more about [OpenAlways](https://github.com/VelisCore/OpenAlways). If you have any more questions, run `/feedback`.", view=openalways_button, ephemeral=True)
+        elif selected_help == "githubinformation":
+            await interaction.response.send_message(f"Here you can read more about [githubinformation](https://github.com/VelisCore/githubinformation). If you have any more questions, run `/feedback`.", view=githubinformation_button, ephemeral=True)
+        elif selected_help == "Connecto":
+            await interaction.response.send_message(f"Here you can read more about [Connecto](https://github.com/VelisCore/Connecto). If you have any more questions, run `/feedback`.", view=connecto_button, ephemeral=True)
+        elif selected_help == "devplaceo":
+            await interaction.response.send_message(f"Here you can read more about [devplaceo](https://github.com/VelisCore/devplaceo). If you have any more questions, run `/feedback`.", view=devplaceo_button, ephemeral=True)
             
 @app_commands.command(name="help", description="A command that helps you!")
 @app_commands.allowed_installs(guilds=True, users=True)
@@ -348,21 +424,21 @@ class ImportantSelect(Select):
     
     async def callback(self, interaction: discord.Interaction):
         selected_important = self.values[0]
-        terms_of_service_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/Discord-Bot/blob/main/terms_of_service.md")
-        privacy_policy_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/Discord-Bot/blob/main/privacy_policy.md")
-        github_page_button = link_button(text="Open 📩" , link="https://github.com/D-I-Projects/Discord-Bot")
+        terms_of_service_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/blob/main/terms_of_service.md")
+        privacy_policy_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/blob/main/privacy_policy.md")
+        github_page_button = link_button(text="Open 📩" , link="https://github.com/VelisCore/Velaris")
         discord_join_button = link_button(text="Join 📩", link="https://discord.gg/5NDYmBVdSA")
-        version_button = link_button(text="Show 📩", link="https://github.com/D-I-Projects/Discord-Bot/releases/tag/v24.9.24")
+        version_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/releases/tag/v25.1.27")
         if selected_important == "Terms of Service":
-            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://github.com/D-I-Projects/Discord-Bot/blob/main/terms_of_service.md)!", view=terms_of_service_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://github.com/VelisCore/Velaris/blob/main/terms_of_service.md)!", view=terms_of_service_button, ephemeral=True)
         elif selected_important == "Privacy Policy":
-            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://github.com/D-I-Projects/Discord-Bot/blob/main/privacy_policy.md)!", view=privacy_policy_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://github.com/VelisCore/Velaris/blob/main/privacy_policy.md)!", view=privacy_policy_button, ephemeral=True)
         elif selected_important == "GitHub":
-            await interaction.response.send_message(f"You can finde the Source Code and stuff under our [GitHub Page](https://github.com/D-I-Projects/Discord-Bot)!", view=github_page_button, ephemeral=True)
+            await interaction.response.send_message(f"You can finde the Source Code and stuff under our [GitHub Page](https://github.com/VelisCore/Velaris)!", view=github_page_button, ephemeral=True)
         elif selected_important == "Discord":
             await interaction.response.send_message(f"**A link to our [Discord Server](https://discord.gg/5NDYmBVdSA)**!", view=discord_join_button, ephemeral=True)
         elif selected_important == "Version":
-            await interaction.response.send_message(f"**Current version : [v24.9.4](https://github.com/D-I-Projects/Discord-Bot/releases/tag/v24.9.24)**", view=version_button ,ephemeral=True)
+            await interaction.response.send_message(f"**Current version : [v25.1.27](https://github.com/VelisCore/Velaris/releases/tag/v25.1.27)**", view=version_button ,ephemeral=True)
 
 @app_commands.command(name="important", description="Important Links for the Discord Bot.")
 @app_commands.allowed_installs(guilds=True, users=True)
