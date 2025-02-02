@@ -585,4 +585,4 @@ client.tree.add_command(get_file_command)
 client.tree.add_command(delete_file_command)
 client.tree.add_command(feedback)
 
-client.run(TOKEN)
+client.run(token)
