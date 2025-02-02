@@ -11,7 +11,7 @@ from datetime import date, timedelta
 
 TOKEN = os.getenv('TOKEN')
 
-if token:
+if TOKEN:
     print(f"Bot started with TOKEN: {token}")
 else:
     print("TOKEN environment variable is not set.")
