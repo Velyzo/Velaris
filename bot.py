@@ -7,6 +7,7 @@ import datetime
 import pytz
 import uuid
 import threading
+from flask import Flask
 import asyncio
 from datetime import date, timedelta
 import argparse
@@ -586,8 +587,21 @@ client.tree.add_command(get_file_command)
 client.tree.add_command(delete_file_command)
 client.tree.add_command(feedback)
 
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return redirect("https://velis.me", code=302)
+
+def run_flask():
+    app.run(host='0.0.0.0', port=80, debug=False, use_reloader=False)
+
 def run_bot():
     client.run(token)
 
+
 bot_thread = threading.Thread(target=run_bot)
 bot_thread.start()
+
+flask_thread = threading.Thread(target=run_flask)
+flask_thread.start()
