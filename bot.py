@@ -591,17 +591,27 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    # Redirect to velis.me
     return redirect("https://velis.me", code=302)
 
 def run_flask():
-    app.run(host='0.0.0.0', port=80, debug=False, use_reloader=False)
+    # Run Flask app on port 80 without SSL for simplicity
+    app.run(host='0.0.0.0', port=80, debug=True, use_reloader=False)
 
+# Define the bot function (replace this with your actual bot code)
 def run_bot():
     client.run(token)
 
-
+# Create and start the bot thread
 bot_thread = threading.Thread(target=run_bot)
+bot_thread.daemon = True  # Ensure that the bot thread exits when the main program exits
 bot_thread.start()
 
+# Create and start the Flask thread
 flask_thread = threading.Thread(target=run_flask)
+flask_thread.daemon = True  # Ensure that the Flask thread exits when the main program exits
 flask_thread.start()
+
+# Optionally, wait for both threads to run. You can remove this if you don't need the main thread to wait.
+bot_thread.join()
+flask_thread.join()
