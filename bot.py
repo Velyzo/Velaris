@@ -17,7 +17,7 @@ args = parser.parse_args()
 token = args.TOKEN or os.getenv('TOKEN')
 
 if token:
-    print(f"Bot started with TOKEN: {token}")
+    print(f"Bot started with TOKEN")
 else:
     print("TOKEN environment variable is not set.")
     exit(1)
