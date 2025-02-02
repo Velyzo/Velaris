@@ -9,7 +9,12 @@ import uuid
 import asyncio
 from datetime import date, timedelta
 
-TOKEN = ""
+TOKEN = os.getenv('TOKEN')
+
+if token:
+    print(f"Bot started with TOKEN: {token}")
+else:
+    print("TOKEN environment variable is not set.")
 
 MAX_REQUESTS_PER_HOUR = 60
 
