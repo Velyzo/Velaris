@@ -7,7 +7,7 @@ import datetime
 import pytz
 import uuid
 import threading
-from flask import Flask
+from flask import Flask, redirect
 import asyncio
 from datetime import date, timedelta
 import argparse
@@ -596,7 +596,7 @@ def home():
 
 def run_flask():
     # Run Flask app on port 80 without SSL for simplicity
-    app.run(host='0.0.0.0', port=80, debug=True, use_reloader=False)
+    app.run(host='0.0.0.0', port=80, debug=False, use_reloader=False)
 
 # Define the bot function (replace this with your actual bot code)
 def run_bot():
