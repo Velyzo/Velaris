@@ -6,6 +6,7 @@ import os
 import datetime
 import pytz
 import uuid
+import threading
 import asyncio
 from datetime import date, timedelta
 import argparse
@@ -585,4 +586,8 @@ client.tree.add_command(get_file_command)
 client.tree.add_command(delete_file_command)
 client.tree.add_command(feedback)
 
-client.run(token)
+def run_bot():
+    client.run(token)
+
+bot_thread = threading.Thread(target=run_bot)
+bot_thread.start()
