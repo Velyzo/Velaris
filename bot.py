@@ -8,8 +8,20 @@ import pytz
 import uuid
 import asyncio
 from datetime import date, timedelta
+import argparse
 
-TOKEN = os.getenv('TOKEN')
+parser = argparse.ArgumentParser()
+parser.add_argument('--TOKEN', type=str, help='The token for the bot')
+args = parser.parse_args()
+
+token = args.TOKEN or os.getenv('TOKEN')
+
+if token:
+    print(f"Bot started with TOKEN: {token}")
+else:
+    print("TOKEN environment variable is not set.")
+    exit(1)
+
 
 MAX_REQUESTS_PER_HOUR = 60
 
