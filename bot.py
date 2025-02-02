@@ -11,11 +11,6 @@ from datetime import date, timedelta
 
 TOKEN = os.getenv('TOKEN')
 
-if TOKEN:
-    print(f"Bot started with TOKEN: {token}")
-else:
-    print("TOKEN environment variable is not set.")
-
 MAX_REQUESTS_PER_HOUR = 60
 
 user_requests = {}
