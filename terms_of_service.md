@@ -2,11 +2,11 @@
 
 ## Introduction
 
-Welcome to the D&I Bot! By using our bot, you agree to comply with and be bound by the following terms. If you do not agree to these terms, you should not use the bot.
+Welcome to the Velaris! By using our bot, you agree to comply with and be bound by the following terms. If you do not agree to these terms, you should not use the bot.
 
 ## License
 
-The D&I Bot is licensed under the [MIT License](https://opensource.org/licenses/MIT). This means:
+The Velaris is licensed under the [MIT License](https://opensource.org/licenses/MIT). This means:
 
 - **Permission is hereby granted, free of charge, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software.**
 - **The above copyright notice and this permission notice must be included in all copies or substantial portions of the Software.**

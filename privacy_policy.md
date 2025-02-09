@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the Privacy Policy of the D&I Bot. We are dedicated to protecting your privacy and ensuring that your data is managed safely and responsibly. This Privacy Policy outlines how we collect, use, and safeguard the information you provide when interacting with our bot.
+Welcome to the Privacy Policy of the Velaris. We are dedicated to protecting your privacy and ensuring that your data is managed safely and responsibly. This Privacy Policy outlines how we collect, use, and safeguard the information you provide when interacting with our bot.
 
 ## Data Collection
 

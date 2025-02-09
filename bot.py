@@ -312,7 +312,7 @@ class HelpSelect(Select):
             discord.SelectOption(label="githubinformation", description="Pick this if you need help with githubinformation!"),
             discord.SelectOption(label="Connecto", description="Pick this if you need help with Connecto!"),
             discord.SelectOption(label="devplaceo", description="Pick this if you need help with devplaceo!"),
-            discord.SelectOption(label="D&I Bot", description="Pick this if you need help with our Discord Bot!"),
+            discord.SelectOption(label="Velaris", description="Pick this if you need help with our Discord Bot!"),
             discord.SelectOption(label="diec", description="Pick this if you need help with our PyPi Package *diec*!"),
             discord.SelectOption(label="Destor", description="Pick this if you need help with our Program Destor!"),
             discord.SelectOption(label="ChatBox", description="Pick this if you need help with our Program ChatBox!"),
@@ -338,7 +338,7 @@ class HelpSelect(Select):
         connecto_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Connecto")
         devplaceo_button = link_button(text="Show 📩", link="https://github.com/VelisCore/devplaceo")
 
-        if selected_help == "D&I Bot":
+        if selected_help == "Velaris":
             await interaction.response.send_message(f"Here you can read more about our [Discord Bot](https://github.com/VelisCore/Velaris/wiki). If you have any more questions, run `/feedback`.", view=di_bot_button, ephemeral=True)
         elif selected_help == "diec":
             await interaction.response.send_message(f"Here you can read more about our PyPi Package [diec](https://github.com/VelisCore/diec). If you have any more questions, run `/feedback`.", view=diec_button, ephemeral=True)
@@ -444,9 +444,9 @@ class ImportantSelect(Select):
         discord_join_button = link_button(text="Join 📩", link="https://discord.gg/5NDYmBVdSA")
         version_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/releases/tag/v25.1.27")
         if selected_important == "Terms of Service":
-            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://github.com/VelisCore/Velaris/blob/main/terms_of_service.md)!", view=terms_of_service_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://docs.velis.me/velaris/terms-of-service)!", view=terms_of_service_button, ephemeral=True)
         elif selected_important == "Privacy Policy":
-            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://github.com/VelisCore/Velaris/blob/main/privacy_policy.md)!", view=privacy_policy_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://docs.velis.me/velaris/privacy-policy)!", view=privacy_policy_button, ephemeral=True)
         elif selected_important == "GitHub":
             await interaction.response.send_message(f"You can finde the Source Code and stuff under our [GitHub Page](https://github.com/VelisCore/Velaris)!", view=github_page_button, ephemeral=True)
         elif selected_important == "Discord":
@@ -525,6 +525,7 @@ async def uptime_command(interaction: discord.Interaction):
     await interaction.response.send_message(uptime_message, ephemeral=True, view=UpTimeView())
 
 
+
 @app_commands.command(name="savefile", description="Saves a text file.")
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
@@ -591,27 +592,21 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    # Redirect to velis.me
     return redirect("https://velis.me", code=302)
 
 def run_flask():
-    # Run Flask app on port 80 without SSL for simplicity
     app.run(host='0.0.0.0', port=80, debug=False, use_reloader=False)
 
-# Define the bot function (replace this with your actual bot code)
 def run_bot():
     client.run(token)
 
-# Create and start the bot thread
 bot_thread = threading.Thread(target=run_bot)
-bot_thread.daemon = True  # Ensure that the bot thread exits when the main program exits
+bot_thread.daemon = True
 bot_thread.start()
 
-# Create and start the Flask thread
 flask_thread = threading.Thread(target=run_flask)
-flask_thread.daemon = True  # Ensure that the Flask thread exits when the main program exits
+flask_thread.daemon = True
 flask_thread.start()
 
-# Optionally, wait for both threads to run. You can remove this if you don't need the main thread to wait.
 bot_thread.join()
 flask_thread.join()
