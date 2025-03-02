@@ -22,3 +22,5 @@
 
 ## 📜 Terms of Service  
 🔗 [Read Terms of Service](https://veliscore.gitbook.io/docs/velaris/terms-of-service)
+
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%203.svg)](https://www.digitalocean.com/?refcode=881255e24b11&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
