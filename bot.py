@@ -6,7 +6,9 @@ import os
 import datetime
 import pytz
 import uuid
+import requests
 import threading
+import time
 from flask import Flask, redirect
 import asyncio
 from datetime import date, timedelta
@@ -600,6 +602,20 @@ def run_flask():
 def run_bot():
     client.run(token)
 
+def heartbeat():
+    url = "https://uptime.betterstack.com/api/v1/heartbeat/gpAQoEue8X65jqdTfbDnx9bq"
+    while True:
+        try:
+            response = requests.post(url)
+            print(f"Heartbeat gesendet: {response.status_code}")
+        except Exception as e:
+            print(f"Fehler beim Senden des Heartbeats: {e}")
+        time.sleep(60)
+  
+betterstack_thread = threading.Thread(target=heartbeat)
+betterstack_thread.daemon = True
+betterstack_thread.start()
+      
 bot_thread = threading.Thread(target=run_bot)
 bot_thread.daemon = True
 bot_thread.start()
@@ -608,5 +624,6 @@ flask_thread = threading.Thread(target=run_flask)
 flask_thread.daemon = True
 flask_thread.start()
 
+betterstack_thread.join()
 bot_thread.join()
 flask_thread.join()
