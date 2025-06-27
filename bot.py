@@ -111,7 +111,7 @@ class Client(commands.Bot):
         super().__init__(command_prefix='.', intents=Intents().all())
         self.activity = discord.Activity(
             type=discord.ActivityType.watching,
-            name='VelisCore',
+            name='Velyzo',
             details='v25.1.27',
             state='Loading...',
             start=datetime.datetime.now()
@@ -126,7 +126,7 @@ class Client(commands.Bot):
         channel_id = 1333416134740807772
         channel = self.get_channel(channel_id)
         if channel:
-            await channel.send(f'**Welcome**, {member.mention}, to **Velis**!')
+            await channel.send(f'**Welcome**, {member.mention}, to **Velyzo**!')
 
 client = Client()
 
@@ -323,75 +323,75 @@ class HelpSelect(Select):
 
     async def callback(self, interaction: discord.Interaction):
         selected_help = self.values[0]
-        di_bot_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/wiki")
-        diec_button = link_button(text="Show 📩", link="https://github.com/VelisCore/diec")
-        destor_button = link_button(text="Show 📩", link="https://github.com/VelisCore/destor")
-        discordbotmanager_button = link_button(text="Show 📩", link="https://github.com/VelisCore/DiscordBotManager/wiki")
-        eulionline_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Eulionline")
-        ideora_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Ideora")
-        devco_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Devco")
-        vocules_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Vocules")
-        keylogger_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Keylogger")
-        insightlog_button = link_button(text="Show 📩", link="https://github.com/VelisCore/InsightLog")
-        returntime_button = link_button(text="Show 📩", link="https://github.com/VelisCore/ReturnTime")
-        bettertkinter_button = link_button(text="Show 📩", link="https://github.com/VelisCore/BetterTkinter")
-        openalways_button = link_button(text="Show 📩", link="https://github.com/VelisCore/OpenAlways")
-        githubinformation_button = link_button(text="Show 📩", link="https://github.com/VelisCore/githubinformation")
-        connecto_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Connecto")
-        devplaceo_button = link_button(text="Show 📩", link="https://github.com/VelisCore/devplaceo")
+        di_bot_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Velaris/wiki")
+        diec_button = link_button(text="Show 📩", link="https://github.com/Velyzo/diec")
+        destor_button = link_button(text="Show 📩", link="https://github.com/Velyzo/destor")
+        discordbotmanager_button = link_button(text="Show 📩", link="https://github.com/Velyzo/DiscordBotManager/wiki")
+        eulionline_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Eulionline")
+        ideora_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Ideora")
+        devco_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Devco")
+        vocules_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Vocules")
+        keylogger_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Keylogger")
+        insightlog_button = link_button(text="Show 📩", link="https://github.com/Velyzo/InsightLog")
+        returntime_button = link_button(text="Show 📩", link="https://github.com/Velyzo/ReturnTime")
+        bettertkinter_button = link_button(text="Show 📩", link="https://github.com/Velyzo/BetterTkinter")
+        openalways_button = link_button(text="Show 📩", link="https://github.com/Velyzo/OpenAlways")
+        githubinformation_button = link_button(text="Show 📩", link="https://github.com/Velyzo/githubinformation")
+        connecto_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Connecto")
+        devplaceo_button = link_button(text="Show 📩", link="https://github.com/Velyzo/devplaceo")
 
         if selected_help == "Velaris":
-            await interaction.response.send_message(f"Here you can read more about our [Discord Bot](https://github.com/VelisCore/Velaris/wiki). If you have any more questions, run `/feedback`.", view=di_bot_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our [Discord Bot](https://github.com/Velyzo/Velaris/wiki). If you have any more questions, run `/feedback`.", view=di_bot_button, ephemeral=True)
         elif selected_help == "diec":
-            await interaction.response.send_message(f"Here you can read more about our PyPi Package [diec](https://github.com/VelisCore/diec). If you have any more questions, run `/feedback`.", view=diec_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our PyPi Package [diec](https://github.com/Velyzo/diec). If you have any more questions, run `/feedback`.", view=diec_button, ephemeral=True)
         elif selected_help == "Destor":
-            await interaction.response.send_message(f"Here you can read more about our Program [Destor](https://github.com/VelisCore/destor). If you have any more questions, run `/feedback`.", view=destor_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our Program [Destor](https://github.com/Velyzo/destor). If you have any more questions, run `/feedback`.", view=destor_button, ephemeral=True)
         elif selected_help == "ChatBox":
-            await interaction.response.send_message(f"Here you can read more about our Program [ChatBox](https://github.com/VelisCore/ChatBox/wiki). If you have any more questions, run `/feedback`.", view=discordbotmanager_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about our Program [ChatBox](https://github.com/Velyzo/ChatBox/wiki). If you have any more questions, run `/feedback`.", view=discordbotmanager_button, ephemeral=True)
         elif selected_help == "Eulionline":
-            await interaction.response.send_message(f"Here you can read more about [Eulionline](https://github.com/VelisCore/Eulionline). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Eulionline](https://github.com/Velyzo/Eulionline). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Eulionline Android":
-            await interaction.response.send_message(f"Here you can read more about the [Eulionline Android App](https://github.com/VelisCore/Eulionline-Android). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Android App](https://github.com/Velyzo/Eulionline-Android). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Eulionline iOS/iPadOS":
-            await interaction.response.send_message(f"Here you can read more about the [Eulionline iOS/iPadOS App](https://github.com/VelisCore/Eulionline-iOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline iOS/iPadOS App](https://github.com/Velyzo/Eulionline-iOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Eulionline MacOS":
-            await interaction.response.send_message(f"Here you can read more about the [Eulionline MacOS App](https://github.com/VelisCore/Eulionline-MacOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline MacOS App](https://github.com/Velyzo/Eulionline-MacOS). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Eulionline Preview":
-            await interaction.response.send_message(f"Here you can read more about the [Eulionline Preview](https://github.com/VelisCore/Eulionline-Preview). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Preview](https://github.com/Velyzo/Eulionline-Preview). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Eulionline Windows":
-            await interaction.response.send_message(f"Here you can read more about the [Eulionline Windows App](https://github.com/VelisCore/Eulionline-Windows). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Eulionline Windows App](https://github.com/Velyzo/Eulionline-Windows). If you have any more questions, run `/feedback`.", view=eulionline_button, ephemeral=True)
         elif selected_help == "Ideora":
-            await interaction.response.send_message(f"Here you can read more about [Ideora](https://github.com/VelisCore/Ideora). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Ideora](https://github.com/Velyzo/Ideora). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
         elif selected_help == "Ideora iOS/iPadOS":
-            await interaction.response.send_message(f"Here you can read more about the [Ideora iOS/iPadOS App](https://github.com/VelisCore/Ideora-iOS). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Ideora iOS/iPadOS App](https://github.com/Velyzo/Ideora-iOS). If you have any more questions, run `/feedback`.", view=ideora_button, ephemeral=True)
         elif selected_help == "Devco":
-            await interaction.response.send_message(f"Here you can read more about [Devco](https://github.com/VelisCore/Devco). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Devco](https://github.com/Velyzo/Devco). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
         elif selected_help == "Devco API":
-            await interaction.response.send_message(f"Here you can read more about the [Devco API](https://github.com/VelisCore/Devco-API). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Devco API](https://github.com/Velyzo/Devco-API). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
         elif selected_help == "Devco Linux":
-            await interaction.response.send_message(f"Here you can read more about the [Devco Linux App](https://github.com/VelisCore/Devco-Linux). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Devco Linux App](https://github.com/Velyzo/Devco-Linux). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
         elif selected_help == "Devco MacOS":
-            await interaction.response.send_message(f"Here you can read more about the [Devco MacOS App](https://github.com/VelisCore/Devco-MacOS). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Devco MacOS App](https://github.com/Velyzo/Devco-MacOS). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
         elif selected_help == "Devco Windows":
-            await interaction.response.send_message(f"Here you can read more about the [Devco Windows App](https://github.com/VelisCore/Devco-Windows). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about the [Devco Windows App](https://github.com/Velyzo/Devco-Windows). If you have any more questions, run `/feedback`.", view=devco_button, ephemeral=True)
         elif selected_help == "Vocules":
-            await interaction.response.send_message(f"Here you can read more about [Vocules](https://github.com/VelisCore/Vocules). If you have any more questions, run `/feedback`.", view=vocules_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Vocules](https://github.com/Velyzo/Vocules). If you have any more questions, run `/feedback`.", view=vocules_button, ephemeral=True)
         elif selected_help == "Keylogger":
-            await interaction.response.send_message(f"Here you can read more about [Keylogger](https://github.com/VelisCore/Keylogger). If you have any more questions, run `/feedback`.", view=keylogger_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Keylogger](https://github.com/Velyzo/Keylogger). If you have any more questions, run `/feedback`.", view=keylogger_button, ephemeral=True)
         elif selected_help == "InsightLog":
-            await interaction.response.send_message(f"Here you can read more about [InsightLog](https://github.com/VelisCore/InsightLog). If you have any more questions, run `/feedback`.", view=insightlog_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [InsightLog](https://github.com/Velyzo/InsightLog). If you have any more questions, run `/feedback`.", view=insightlog_button, ephemeral=True)
         elif selected_help == "ReturnTime":
-            await interaction.response.send_message(f"Here you can read more about [ReturnTime](https://github.com/VelisCore/ReturnTime). If you have any more questions, run `/feedback`.", view=returntime_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [ReturnTime](https://github.com/Velyzo/ReturnTime). If you have any more questions, run `/feedback`.", view=returntime_button, ephemeral=True)
         elif selected_help == "BetterTkinter":
-            await interaction.response.send_message(f"Here you can read more about [BetterTkinter](https://github.com/VelisCore/BetterTkinter). If you have any more questions, run `/feedback`.", view=bettertkinter_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [BetterTkinter](https://github.com/Velyzo/BetterTkinter). If you have any more questions, run `/feedback`.", view=bettertkinter_button, ephemeral=True)
         elif selected_help == "OpenAlways":
-            await interaction.response.send_message(f"Here you can read more about [OpenAlways](https://github.com/VelisCore/OpenAlways). If you have any more questions, run `/feedback`.", view=openalways_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [OpenAlways](https://github.com/Velyzo/OpenAlways). If you have any more questions, run `/feedback`.", view=openalways_button, ephemeral=True)
         elif selected_help == "githubinformation":
-            await interaction.response.send_message(f"Here you can read more about [githubinformation](https://github.com/VelisCore/githubinformation). If you have any more questions, run `/feedback`.", view=githubinformation_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [githubinformation](https://github.com/Velyzo/githubinformation). If you have any more questions, run `/feedback`.", view=githubinformation_button, ephemeral=True)
         elif selected_help == "Connecto":
-            await interaction.response.send_message(f"Here you can read more about [Connecto](https://github.com/VelisCore/Connecto). If you have any more questions, run `/feedback`.", view=connecto_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [Connecto](https://github.com/Velyzo/Connecto). If you have any more questions, run `/feedback`.", view=connecto_button, ephemeral=True)
         elif selected_help == "devplaceo":
-            await interaction.response.send_message(f"Here you can read more about [devplaceo](https://github.com/VelisCore/devplaceo). If you have any more questions, run `/feedback`.", view=devplaceo_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can read more about [devplaceo](https://github.com/Velyzo/devplaceo). If you have any more questions, run `/feedback`.", view=devplaceo_button, ephemeral=True)
             
 @app_commands.command(name="help", description="A command that helps you!")
 @app_commands.allowed_installs(guilds=True, users=True)
@@ -440,21 +440,21 @@ class ImportantSelect(Select):
     
     async def callback(self, interaction: discord.Interaction):
         selected_important = self.values[0]
-        terms_of_service_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/blob/main/terms_of_service.md")
-        privacy_policy_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/blob/main/privacy_policy.md")
-        github_page_button = link_button(text="Open 📩" , link="https://github.com/VelisCore/Velaris")
+        terms_of_service_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Velaris/blob/main/terms_of_service.md")
+        privacy_policy_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Velaris/blob/main/privacy_policy.md")
+        github_page_button = link_button(text="Open 📩" , link="https://github.com/Velyzo/Velaris")
         discord_join_button = link_button(text="Join 📩", link="https://discord.gg/5NDYmBVdSA")
-        version_button = link_button(text="Show 📩", link="https://github.com/VelisCore/Velaris/releases/tag/v25.1.27")
+        version_button = link_button(text="Show 📩", link="https://github.com/Velyzo/Velaris/releases/tag/v25.1.27")
         if selected_important == "Terms of Service":
-            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://docs.velis.me/velaris/terms-of-service)!", view=terms_of_service_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Terms of Service](https://docs.velyzo.de/velaris/terms-of-service)!", view=terms_of_service_button, ephemeral=True)
         elif selected_important == "Privacy Policy":
-            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://docs.velis.me/velaris/privacy-policy)!", view=privacy_policy_button, ephemeral=True)
+            await interaction.response.send_message(f"Here you can take a look at our [Privacy Policy](https://docs.velyzo.de/velaris/privacy-policy)!", view=privacy_policy_button, ephemeral=True)
         elif selected_important == "GitHub":
-            await interaction.response.send_message(f"You can finde the Source Code and stuff under our [GitHub Page](https://github.com/VelisCore/Velaris)!", view=github_page_button, ephemeral=True)
+            await interaction.response.send_message(f"You can finde the Source Code and stuff under our [GitHub Page](https://github.com/Velyzo/Velaris)!", view=github_page_button, ephemeral=True)
         elif selected_important == "Discord":
             await interaction.response.send_message(f"**A link to our [Discord Server](https://discord.gg/5NDYmBVdSA)**!", view=discord_join_button, ephemeral=True)
         elif selected_important == "Version":
-            await interaction.response.send_message(f"**Current version : [v25.1.27](https://github.com/VelisCore/Velaris/releases/tag/v25.1.27)**", view=version_button ,ephemeral=True)
+            await interaction.response.send_message(f"**Current version : [v25.1.27](https://github.com/Velyzo/Velaris/releases/tag/v25.1.27)**", view=version_button ,ephemeral=True)
 
 @app_commands.command(name="important", description="Important Links for the Discord Bot.")
 @app_commands.allowed_installs(guilds=True, users=True)
@@ -594,7 +594,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return redirect("https://velis.me", code=302)
+    return redirect("https://velyzo.de", code=302)
 
 def run_flask():
     app.run(host='0.0.0.0', port=80, debug=False, use_reloader=False)
